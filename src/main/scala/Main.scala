@@ -3,6 +3,7 @@ import scala.annotation.tailrec
 import scala.collection.mutable.ListBuffer
 import scala.util.Random
 import scala.collection.immutable.Map
+import scala.math.sqrt
 
 object Main {
   def main(args: Array[String]): Unit = {
@@ -133,6 +134,21 @@ object Main {
 
     val result2 = buildMap(lst22, func)
     println(result)
+
+
+
+
+  //assignment 2 ex3 :
+
+    def myfun(vector : List[Int]) : Double = {
+      val sqr_sum = vector.map(x  => x * x ).sum
+      val mag = sqrt(sqr_sum)
+
+      mag
+    }
+    val checklist = List(1,2,3,4,5,6)
+    println(myfun(checklist))
+
 
   }
 }
