@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="sbt: scala-sdk-2.13.12" type="Scala">
     <properties>
-      <language-level>Scala_2_13</language-level>
+      <language-level>Scala_3_2</language-level>
       <compiler-classpath>
         <root url="file://$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.12/scala-library-2.13.12.jar" />
         <root url="file://$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/io/github/java-diff-utils/java-diff-utils/4.12/java-diff-utils-4.12.jar" />

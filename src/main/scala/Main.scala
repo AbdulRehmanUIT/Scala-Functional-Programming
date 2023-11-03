@@ -3,7 +3,7 @@ import scala.annotation.tailrec
 import scala.collection.mutable.ListBuffer
 import scala.util.Random
 import scala.collection.immutable.Map
-import scala.math.sqrt
+import scala.math.{pow, sqrt}
 
 object Main {
   def main(args: Array[String]): Unit = {
@@ -138,7 +138,43 @@ object Main {
 
 
 
-  //assignment 2 ex3 :
+    //assignment 2
+
+    //Exercise 1
+    def myfunc(x: Int) = {
+      val a = 3;
+      val b = 5;
+      val c = 7
+      val y = a * (pow(x, 2)) + b * (x) + c
+      y
+    }
+
+    val list1 = Range(-3, 4).toList
+    print("main list ", list1, "\n")
+    val list2 = list1.map(myfunc(_))
+
+    println(s"list after functions applied : $list2 ")
+
+
+    //Exercise 2
+
+    val listziped = list1.zip(list2)
+
+    println(s"zipped list  : $listziped ")
+
+    val zippedWithIndex = listziped.zipWithIndex.map { case ((x, fx), index) => (x, fx, index) }
+
+    println(s"this is zipped final : $zippedWithIndex")
+
+    val meanFx = zippedWithIndex.map { case (x, fx, i) => fx }
+    val mean = (meanFx.sum / meanFx.length)
+    val fmean = zippedWithIndex.find { case (_, fx, _) => fx == mean }
+
+    println(fmean)
+
+
+
+  //ex3 :
 
     def myfun(vector : List[Int]) : Double = {
       val sqr_sum = vector.map(x  => x * x ).sum
@@ -150,5 +186,51 @@ object Main {
     println(myfun(checklist))
 
 
+
+    //Exercise 4 : 11.2
+
+    // An example list
+    val uList = List(1, 2, 3, 4, 5)
+
+    //using wildcards for doubling
+    val uListDoubled = uList.map(_ * 2)
+    println(s"List elements doubled: $uListDoubled")
+
+    //using wildcards for selective squaring
+    def f(x: Int) = if (x > 2) x*x else None
+    val uListSquared = uList.filter(_ > 2).map(f)
+    println(s"List elements squared selectively: $uListSquared")
+
+    //Exercise 4 : 11.3
+
+    val Listm2 :List[Int] = List(1, 2, 3, 4)
+    def g(v: Int): List[Int] = List(v - 1, v, v + 1)
+
+    // Using map
+    val uListExtendedMap = uList.map(g(_))
+    println(s"Extended list using map: $uListExtendedMap")
+
+    // Using flatMap to flatten the result
+    val uListExtendedFlatMap = uList.flatMap(g(_))
+    println(s"Extended list using flatMap: $uListExtendedFlatMap")
+
+    //Exercise 4 : 11.4
+
+    val uList22 : List[Int] = List(1, 2, 3, 4, 5)
+    def myf(x: Int)= if (x > 2) Some (x) else None
+
+    // Applying map and flatMap with built-in Options class
+    val uListSelectiveMap = uList22.map(myf(_))
+    println(s"Selective elements of List with map: $uListSelectiveMap")
+
+    val uListSelectiveFlatMap = uList22.flatMap(myf(_))
+    println(s"Selective elements of List with flatMap: $uListSelectiveFlatMap")
+
+    //Exercise 4 : 11.4
+
+
+
+
   }
+
 }
