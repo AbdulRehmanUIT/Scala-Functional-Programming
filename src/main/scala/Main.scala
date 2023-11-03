@@ -226,9 +226,8 @@ object Main {
     val uListSelectiveFlatMap = uList22.flatMap(myf(_))
     println(s"Selective elements of List with flatMap: $uListSelectiveFlatMap")
 
-    //Exercise 4 : 11.4
-
-
+    //Exercise 4 : 11.5
+    //no wild card can be used
 
 
   }
