@@ -229,6 +229,18 @@ object Main {
     //Exercise 4 : 11.5
     //no wild card can be used
 
+    //EX1.2
+
+    def apply ( a :List[Int]) = {
+      val ez = a.sum
+      print(ez)
+    }
+    apply(uList22)
+
+
+
+    //
+
 
   }
 
